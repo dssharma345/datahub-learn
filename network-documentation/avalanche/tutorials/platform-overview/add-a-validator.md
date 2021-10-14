@@ -2,18 +2,16 @@
 
 ## Introduction
 
-The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is incorporated into the Avalanche platform and legitimize Avalanche’s [built-in blockchains](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [subnet](https://avalanche.gitbook.io/avalanche/learn/platform-overview#subnets) on Avalanche and a node to the Primary Network. 
+The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is incorporated into the Avalanche platform and legitimize Avalanche’s [`built-in blockchains`](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [`subnet`](https://learn.figment.io/tutorials/create-a-subnet) on Avalanche and a node to the Primary Network. 
 
 
-On Avalanche, the P-Chain regulates metadata.  This involves keeping track of which nodes belong to which subnets, which blockchains are active, and which subnets validate which blockchains. We’ll issue [transactions](http://support.avalabs.org/en/articles/4587384-what-is-a-transaction) to the P-Chain in order to add a validator. 
+On Avalanche, the P-Chain regulates metadata.  This involves keeping track of which nodes belong to which subnets, which blockchains are active, and which subnets validate which blockchains. We’ll issue [`transactions`](http://support.avalabs.org/en/articles/4587384-what-is-a-transaction) to the P-Chain in order to add a validator. 
 
-{% hint style="danger" %}
-Note that there is no way to modify the parameters once you've issued the transaction to add a node as a validator. **You cannot amend the stake amount, node ID, or reward address, or withdraw your stake early.** Please double-check that the values in the API calls below are correct. If you’re not sure, browse the [Developer FAQ's](http://support.avalabs.org/en/collections/2618154-developer-faq) or ask for help on [Discord.](https://chat.avalabs.org/)
-{% endhint %}
+> Note: That there is no way to modify the parameters once you've issued the transaction to add a node as a validator. **You cannot amend the stake amount, node ID, or reward address, or withdraw your stake early.** Please double-check that the values in the API calls below are correct. If you’re not sure, browse the [Developer FAQ's](https://figment.io/contact/) or ask for help on [Discord](https://discord.gg/fszyM7K)
 
 ## Requirements
 
-You've accomplished [Run an Avalanche Node](../../get-started.md) and are acquainted with [Avalanche's architecture](../../../learn/platform-overview/). In this tutorial, we'll utilize [Avalanche’s Postman collection](https://github.com/ava-labs/avalanche-postman-collection) to assist us make API calls.
+You've accomplished [`Run an Avalanche Node`](../../get-started.md) and are acquainted with [`Avalanche's architecture](../../learn/platform-overview/). In this tutorial, we'll utilize [Avalanche’s Postman collection](https://github.com/ava-labs/avalanche-postman-collection) to assist us make API calls.
 
 Make sure your node can receive and send TCP traffic on the staking port \(`9651` by default\) and that you initiated the node with the command line parameter `--public-ip=[YOUR NODE'S PUBLIC IP HERE]` to ensure your node is well-connected. If you fail to do either of these, your staking reward could be jeopardized.
 
@@ -74,9 +72,8 @@ Put the Amount and hit 'confirm'.
 
 Complete the staking parameters. We've discussed in greater depth further down. After you've double-checked all of the staking parameters, click `Confirm` Make sure your staking term is at least two weeks long, the delegation fee rate is at least 2%, and you're staking at least 2,000 AVAX.
 
-{% page-ref page="https://docs.avax.network/learn/platform-overview/staking" %}
-
-![Earn validate](/.gitbook/assets/earn-vadilator-ava-wallet.png)
+### [`Learn how to stake on Avalanche`](https://docs.avax.network/learn/platform-overview/staking) 
+![`Earn validate`](/.gitbook/assets/earn-vadilator-ava-wallet.png)
 
 This success notice should appear, along with an update to your balance.
 
