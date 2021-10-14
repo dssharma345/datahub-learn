@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is incorporated into the Avalanche platform and legitimize Avalanche’s [`built-in blockchains`](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [`subnet`](https://learn.figment.io/tutorials/create-a-subnet) on Avalanche and a node to the Primary Network. 
+The [Primary Network](https://support.avax.network/en/articles/4135650-what-is-the-primary-network) is incorporated into the Avalanche platform and legitimize Avalanche’s [`built-in blockchains`](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [`subnet`](https://learn.figment.io/tutorials/create-a-subnet) on Avalanche and a node to the Primary Network. 
 
 
 On Avalanche, the P-Chain regulates metadata.  This involves keeping track of which nodes belong to which subnets, which blockchains are active, and which subnets validate which blockchains. We’ll issue [`transactions`](http://support.avalabs.org/en/articles/4587384-what-is-a-transaction) to the P-Chain in order to add a validator. 
@@ -11,7 +11,7 @@ On Avalanche, the P-Chain regulates metadata.  This involves keeping track of w
 
 ## Requirements
 
-You've accomplished [`Run an Avalanche Node`](../../get-started.md) and are acquainted with [`Avalanche's architecture](../../learn/platform-overview/). In this tutorial, we'll utilize [Avalanche’s Postman collection](https://github.com/ava-labs/avalanche-postman-collection) to assist us make API calls.
+You've accomplished [`Run an Avalanche Node`](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node) and are acquainted with [`Avalanche's architecture](https://docs.avax.network/learn/platform-overview#:~:text=Avalanche%20features%203%20built%2Din,secured%20by%20the%20Primary%20Network.) to assist us make API calls.
 
 Make sure your node can receive and send TCP traffic on the staking port \(`9651` by default\) and that you initiated the node with the command line parameter `--public-ip=[YOUR NODE'S PUBLIC IP HERE]` to ensure your node is well-connected. If you fail to do either of these, your staking reward could be jeopardized.
 
@@ -26,7 +26,7 @@ Make sure your node can receive and send TCP traffic on the staking port \(`9651
 
 First, We've demonstrated how to add your node as a validator by using [Avalanche Wallet](https://wallet.avax.network).
 
-Get your node’s ID by calling [`info.getNodeID`](https://avalanche.gitbook.io/avalanche/build/apis/info-api#info-getnodeid):
+Get your node’s ID by calling [`info.getNodeID`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator):
 
 ![getNodeID postman](/.gitbook/assets/get-node-id-postman.PNG)
 
@@ -79,7 +79,7 @@ This success notice should appear, along with an update to your balance.
 
 ![Your validation transaction is sent](/.gitbook/assets/x2p-conform-ava.png)
 
-Calling [`platform.getPendingValidators`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-getpendingvalidators) confirms that your transaction was successfully accepted.
+Calling [`platform.getPendingValidators`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator) confirms that your transaction was successfully accepted.
 
 ![getPendingValidators postman](/.gitbook/assets/getPendingValidators-postman.png)
 
@@ -95,7 +95,7 @@ That’s it!
 
 ## Add a validator with API calls
 
-By making API calls to our node, we can also add a node to the validator set. To add a node to the Primary Network, we’ll call [`platform.addValidator`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-addvalidator)
+By making API calls to our node, we can also add a node to the validator set. To add a node to the Primary Network, we’ll call [`platform.addValidator`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator#:~:text=Add%20a%20validator%20with%20Avalanche%20Wallet&text=Open%20the%20wallet%2C%20and%20go,Choose%20Add%20Validator%20.&text=Fill%20out%20the%20staking%20parameters,explained%20in%20more%20detail%20below.)
 
 This method’s signature is:
 
@@ -119,7 +119,7 @@ Let’s go through and examine these arguments.
 
 `nodeID`
 
-This is the node ID of the validator being added. To obtain your node’s ID, call [`info.getNodeID`](https://avalanche.gitbook.io/avalanche/build/apis/info-api#info-getnodeid):
+This is the node ID of the validator being added. To obtain your node’s ID, call [`info.getNodeID`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator):
 
 ```cpp
 curl -X POST --data '{
@@ -201,7 +201,7 @@ The transaction ID is included in the response, as well as the address where the
 }
 ```
 
-We can verify the status of the transaction by calling [`platform.getTxStatus`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-gettxstatus):
+We can verify the status of the transaction by calling [`platform.getTxStatus`](https://docs.avax.network/build/avalanchego-apis/issuing-api-calls):
 
 ```cpp
 curl -X POST --data '{
@@ -214,7 +214,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/P
 ```
 
-The status should be `Committed`, which indicates that the transaction was completed successfully. We can call [`platform.getPendingValidators`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-getpendingvalidators) and see that the node is now in the pending validator set for the Primary Network:
+The status should be `Committed`, which indicates that the transaction was completed successfully. We can call [`platform.getPendingValidators`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator) and see that the node is now in the pending validator set for the Primary Network:
 
 ```cpp
 curl -X POST --data '{
@@ -250,11 +250,11 @@ This node will commence validating the Primary Network when the time reaches `15
 
 ### Issuing a Subnet Validator Transaction
 
-Now let’s add the same node to a subnet. The following will make more sense if you’ve already done this [tutorial on creating a Subnet](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/create-a-subnet). Right now you can only add validators to subnets with API calls, not with Avalanche Wallet.
+Now let’s add the same node to a subnet. The following will make more sense if you’ve already done this [tutorial on creating a Subnet](https://docs.avax.network/build/tutorials/platform/create-a-subnet). Right now you can only add validators to subnets with API calls, not with Avalanche Wallet.
 
 Suppose that the Subnet has ID `nTd2Q2nTLp8M9qv2VKHMdvYhtNWX7aTPa4SMEK7x7yJHbcWvr`, threshold 2, and that `username` holds at least 2 control keys.
 
-To add the validator, we’ll call API method [`platform.addSubnetValidator`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-addsubnetvalidator). Its signature is:
+To add the validator, we’ll call API method [`platform.addSubnetValidator`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator#:~:text=Add%20a%20validator%20with%20Avalanche%20Wallet&text=Open%20the%20wallet%2C%20and%20go,Choose%20Add%20Validator%20.&text=Fill%20out%20the%20staking%20parameters,explained%20in%20more%20detail%20below.). Its signature is:
 
 ```cpp
 platform.addSubnetValidator(
@@ -330,7 +330,7 @@ The response has the transaction ID, as well as the address the change went to.
 }
 ```
 
-We can check the status of the transaction by calling [`platform.getTxStatus`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-gettxstatus):
+We can check the status of the transaction by calling [`platform.getTxStatus`](https://docs.avax.network/build/avalanchego-apis/issuing-api-calls):
 
 ```cpp
 curl -X POST --data '{
@@ -343,7 +343,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/P
 ```
 
-The status should be `Committed`, meaning the transaction was successful. We can call [`platform.getPendingValidators`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-getpendingvalidators) and see that the node is now in the pending validator set for the Primary Network. This time, we specify the subnet ID:
+The status should be `Committed`, meaning the transaction was successful. We can call [`platform.getPendingValidators`](https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator) and see that the node is now in the pending validator set for the Primary Network. This time, we specify the subnet ID:
 
 ```cpp
 curl -X POST --data '{
