@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is incorporated to the Avalanche platform and legitimize Avalanche’s [built-in blockchains](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [subnet](https://avalanche.gitbook.io/avalanche/learn/platform-overview#subnets) on Avalanche and a node to the Primary Network. 
+The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is incorporated into the Avalanche platform and legitimize Avalanche’s [built-in blockchains](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll create a [subnet](https://avalanche.gitbook.io/avalanche/learn/platform-overview#subnets) on Avalanche and a node to the Primary Network. 
 
 
 On Avalanche, the P-Chain regulates metadata.  This involves keeping track of which nodes belong to which subnets, which blockchains are active, and which subnets validate which blockchains. We’ll issue [transactions](http://support.avalabs.org/en/articles/4587384-what-is-a-transaction) to the P-Chain in order to add a validator. 
@@ -19,14 +19,14 @@ Make sure your node can receive and send TCP traffic on the staking port \(`9651
 
 ## Create an Avalanche Wallet
  Make an [Avalanche Wallet] by clicking on this link (https://wallet.avax.network).
- ![Create a Avalanche Wallet](/.gitbook/assets/create-new-wallet.png)
+ ![Create an Avalanche Wallet](/.gitbook/assets/create-new-wallet.png)
  
 ## Home page of an Avalanche Wallet    
 ![Home page](/.gitbook/assets/wallet-ava-home.png)
 
 ## Add a validator with Avalanche Wallet
 
-First, We've demostrated how to add your node as a validator by using [Avalanche Wallet](https://wallet.avax.network).
+First, We've demonstrated how to add your node as a validator by using [Avalanche Wallet](https://wallet.avax.network).
 
 Get your node’s ID by calling [`info.getNodeID`](https://avalanche.gitbook.io/avalanche/build/apis/info-api#info-getnodeid):
 
@@ -65,7 +65,7 @@ To  `Add Validator` you need to add coins in the Wallet.
 
 For adding the coin in the Wallet, Click on this Link (https://faucet.avax-test.network).
 ![avax-request-fund](/.gitbook/assets/avax-request-fund.png)
-Add your wallet Address, and verify recapcha and hit on Request AVAX.
+Add your wallet Address, and verify Recaptcha, and hit on Request AVAX.
 
 Now you have to convert your coin `X-Chain` to `P-Chain`, by clicking on the Cross Chain Tab.
 ![convert-x2p chain-ava-wallet](/.gitbook/assets/convert-x2p-chain-ava.png)
@@ -98,7 +98,7 @@ That’s it!
 
 ## Add a validator with API calls
 
-By making API calls to our node, we can also add a node to the validator set. To add a node the Primary Network, we’ll call [`platform.addValidator`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-addvalidator)
+By making API calls to our node, we can also add a node to the validator set. To add a node to the Primary Network, we’ll call [`platform.addValidator`](https://avalanche.gitbook.io/avalanche/build/apis/platform-chain-p-chain-api#platform-addvalidator)
 
 This method’s signature is:
 
@@ -147,7 +147,7 @@ The response has your node’s ID:
 
 `startTime` and `endTime`
 
-When someone initiates a transaction to join the Primary Network, they must mention the time they want to enter. \(start validating\) and leave \(stop validating.\) The Primary Network can be validated for a minimum of 24 hours and a maximum of one year. After leaving the Primary Network, one can rejoin however, the maximum _continuous_ period is one year. The Unix times when your validator will start and stop validating the Primary Network are `startTime` and `endTime` respectively. In relation to the time the transaction is issued,`startTime` must be in the future.
+When someone initiates a transaction to join the Primary Network, they must mention the time they want to enter. \(start validating\) and leave \(stop validating.\) The Primary Network can be validated for a minimum of 24 hours and a maximum of one year. After leaving the Primary Network, one can rejoin , however, the maximum _continuous_ period is one year. The Unix times when your validator will start and stop validating the Primary Network are `startTime` and `endTime` respectively. In relation to the time the transaction is issued,`startTime` must be in the future.
 
 `stakeAmount`
 
@@ -170,7 +170,7 @@ Stake delegation is possible with Avalanche. When others delegate stake to this 
 
 These are the username and password of the user who pays the transaction fee, provides the staked AVAX, and gets the staked AVAX returned.
 
-Now it's time to issue the transaction. For the values of `startTime` and `endTime` we utilise the shell command `date` to compute the Unix time 10 minutes and 30 days in the future, respectively. \(Note: If you’re on a Mac, replace `$(date` with `$(gdate`. If you don’t have `gdate` installed, do `brew install coreutils`.\) In this example we stake 2,000 AVAX \(2 x 1012 nAVAX\).
+Now it's time to issue the transaction. For the values of `startTime` and `endTime` we utilize the shell command `date` to compute the Unix time 10 minutes and 30 days in the future, respectively. \(Note: If you’re on a Mac, replace `$(date` with `$(gdate`. If you don’t have `gdate` installed, do `brew install coreutils`.\) In this example we stake 2,000 AVAX \(2 x 1012 nAVAX\).
 
 ```cpp
 curl -X POST --data '{
@@ -382,9 +382,8 @@ This node will begin verifying this Subnet when the time reaches `1584042912`. T
 
 Now that the node has been added as a validator of the subnet, let’s add it to the whitelist of subnets. The whitelist prevents the node from validating a subnet unintentionally.
 
-estart the node and add the parameter to whitelist the subnet `--whitelisted-subnets` with a comma separated list of subnets to whitelist.
+restart the node and add the parameter to whitelist the subnet `--whitelisted-subnets` with a comma-separated list of subnets to whitelist.
 
 The full command is:
 
 `./build/avalanchego --whitelisted-subnets=nTd2Q2nTLp8M9qv2VKHMdvYhtNWX7aTPa4SMEK7x7yJHbcWvr`
-
