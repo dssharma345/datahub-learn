@@ -16,7 +16,7 @@ You've accomplished [`Run an Avalanche Node`](https://docs.avax.network/build/tu
 Make sure your node can receive and send TCP traffic on the staking port \(`9651` by default\) and that you initiated the node with the command line parameter `--public-ip=[YOUR NODE'S PUBLIC IP HERE]` to ensure your node is well-connected. If you fail to do either of these, your staking reward could be jeopardized.
 
 ## Create an Avalanche Wallet
- Make an [Avalanche Wallet] by clicking on this link (https://wallet.avax.network).
+ Make an [Avalanche Wallet] by clicking on this link `https://wallet.avax.network`
  ![Create an Avalanche Wallet](/.gitbook/assets/create-new-wallet.png)
  
 ## Home page of an Avalanche Wallet    
