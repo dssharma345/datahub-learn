@@ -387,13 +387,9 @@ The full command is:
 
 # About the author
 
-[Devesh jain] (https://community.figment.io/u/deveshjain08)
+[Devesh jain](https://community.figment.io/u/deveshjain08)
 
 # References
 
-https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator
-https://docs.avax.network/build/avalanchego-apis/issuing-api-calls
-https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator#:~:text=Add%20a%20validator%20with%20Avalanche%20Wallet&text=Open%20the%20wallet%2C%20and%20go,Choose%20Add%20Validator%20.&text=Fill%20out%20the%20staking%20parameters,explained%20in%20more%20detail%20below.
-https://docs.avax.network/build/tutorials/platform/create-a-subnet
-https://docs.avax.network/build/avalanchego-apis/issuing-api-calls
-https://docs.avax.network/learn/platform-overview/staking
+- https://docs.avax.network/build/tutorials/nodes-and-staking/add-a-validator
+- https://docs.avax.network/learn/platform-overview/staking
