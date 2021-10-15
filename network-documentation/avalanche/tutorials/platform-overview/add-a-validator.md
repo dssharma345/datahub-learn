@@ -11,7 +11,7 @@ On Avalanche, the P-Chain regulates metadata.  This involves keeping track of w
 
 ## Requirements
 
-You've accomplished [`Run an Avalanche Node`](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node) and are acquainted with [`Avalanche's architecture](https://docs.avax.network/learn/platform-overview#:~:text=Avalanche%20features%203%20built%2Din,secured%20by%20the%20Primary%20Network.) to assist us make API calls.
+You've accomplished [`Run an Avalanche Node`](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node) and are acquainted with [`Avalanche's architecture`](https://docs.avax.network/learn/platform-overview#:~:text=Avalanche%20features%203%20built%2Din,secured%20by%20the%20Primary%20Network.) to assist us make API calls.
 
 Make sure your node can receive and send TCP traffic on the staking port \(`9651` by default\) and that you initiated the node with the command line parameter `--public-ip=[YOUR NODE'S PUBLIC IP HERE]` to ensure your node is well-connected. If you fail to do either of these, your staking reward could be jeopardized.
 
@@ -61,13 +61,13 @@ Select the Fuji option instead of Mainnet.
 
 To  `Add Validator` you need to add coins in the Wallet.
 
-For adding the coin in the Wallet, Click on this Link (https://faucet.avax-test.network).
+For adding the coin in the Wallet, Click on this Link https://faucet.avax-test.network
 ![avax-request-fund](/.gitbook/assets/avax-request-fund.png)
 Add your wallet Address, and verify Recaptcha, and hit on Request AVAX.
 
 Now you have to convert your coin `X-Chain` to `P-Chain`, by clicking on the Cross Chain Tab.
 ![convert-x2p chain-ava-wallet](/.gitbook/assets/convert-x2p-chain-ava.png)
-Put the Amount and hit 'confirm'.
+Put the Amount and hit `confirm`.
  
 
 Complete the staking parameters. We've discussed in greater depth further down. After you've double-checked all of the staking parameters, click `Confirm` Make sure your staking term is at least two weeks long, the delegation fee rate is at least 2%, and you're staking at least 2,000 AVAX.
