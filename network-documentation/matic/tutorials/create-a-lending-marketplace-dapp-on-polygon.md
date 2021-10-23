@@ -39,6 +39,25 @@ Install the required depencencies:
 ```
 npm i
 ```
+## Create a loan contract
+
+Here we’ll build the loan creator – A smart contract for both the lender & the requester to place their offer’s on loan. A person might be willing to offer a loan or requesting for a loan.!
+
+### Importing the dependencies
+
+OpenZeppelin Contracts helps you minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains.
+
+```
+pragma solidity ^0.5.0;
+
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+import "./libs/LoanMath.sol";
+import "./External/PriceFeeder.sol";
+import "./libs/String.sol";
+
+```
 
 ## Compile and migrate
 
